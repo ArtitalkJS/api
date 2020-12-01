@@ -4,12 +4,13 @@
         var xhr = new XMLHttpRequest();
         xhr.addEventListener('readystatechange',function(){
             if(this.readyState === 4) {
+                if(this.status !== 200){
+                    window.location = "/";
+                }
                 let retxt = this.responseText;
                 let reJson = eval('(' + retxt + ')');;
                 let num = Math.floor(Math.random() * reJson.length);
                 window.location="https://cdn.jsdelivr.net/gh/drew233/imgapi@1.0/" + reJson[num].path;
-            }else{
-                window.location="https://cndrew.cn";
             }
         })
         xhr.open('get','https://api.github.com/repos/Drew233/imgapi/contents/');
