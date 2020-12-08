@@ -10,7 +10,7 @@
                 let retxt = this.responseText;
                 let reJson = eval('(' + retxt + ')');;
                 let num = Math.floor(Math.random() * reJson.length);
-                window.location="https://cdn.jsdelivr.net/gh/drew233/imgapi@1.0/" + reJson[num].path;
+                window.location="https://cdn.jsdelivr.net/gh/drew233/imgapi/image/" + reJson[num].path;
             }
         })
         xhr.open('get','https://api.github.com/repos/Drew233/imgapi/contents/image/');
